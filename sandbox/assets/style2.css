@@ -1,0 +1,7 @@
+.post {
+  width: 250px;
+  margin: 10px;
+  float: left;
+  background:red;
+}
+.post img { width: 250px;}

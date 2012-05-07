@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- METADATA -->
+	<title>{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+    	<meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    <!-- SCRIPTS, STYLESHEETS, AND OTHER IMPORTS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://postfog.org/workflowtumblr/assets/jquery.masonry.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://postfog.org/workflowtumblr/assets/style6.css">
+	<script src="http://postfog.org/workflowtumblr/assets/script6.js"></script>
+	
+	<!-- TUMBLR OPTIONS FOR THE BLOG ADMIN -->
+  	<meta name="if:Show Author" content="1"/>
+  	<meta name="if:Big Images" content="1"/>
+  	<meta name="if:Show RSS Link" content="1"/>
+  	<meta name="if:Show Archive Link" content="1"/>
+  	<meta name="if:Show Likes Link" content="0"/>
+  	<meta name="if:Show Mobile Link" content="0"/>
+  	<meta name="if:Show Notes" content="0"/>
+  	<meta name="if:Show Reblog Link" content="1"/>
+  	<meta name="if:Show Tags" content="1"/>
+  	<meta name="if:Infinite Scroll" content="0"/>
+  	<meta name="image:Logo" content=""/>
+  	<meta name="text:Semester" content="Spring 2012"/>
+  	
+
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			var $container = $('#container');
+  			{block:IfBigImages}
+  				var wid = 520;
+  			{/block:IfBigImages}
+  			{block:IfNotBigImages}
+  				var wid = 270;
+  			{/block:IfNotBigImages}
+			$container.imagesLoaded(function(){
+  				$container.masonry({
+    				itemSelector : '.post',
+    				columnWidth : wid
+  				});
+			});
+		});
+  	</script>
+  	
+  	<script type="text/javascript">
+		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-31481264-1']);
+  		_gaq.push(['_setDomainName', 'gsappworkflow.org']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+	</script>
+</head>
+
+<body class="gradient large">
+	<header id="header">
+		<ul id="headerlinks">
+			<li><a href="http://arch.columbia.edu">GSAPP</a></li>
+			{block:IfShowArchiveLink}
+				<li><a href="/archive">Archive</a></li>
+			{/block:IfShowArchiveLink}
+			{block:IfShowRSSLink}
+				<li><a href="{RSS}">RSS</a></li>
+			{/block:IfShowRSSLink}
+		</ul>
+		{block:IfLogoImage}<a href="/"><img id="logo" src="{image:Logo}"/></a>{/block:IfLogoImage}
+		<h4 class="title"><a href="/">{Title}</a></h4>
+		<p>{text:Semester}</p>
+		<h5>About</h5>
+		{block:Description}<div id="description">{Description}</div>{/block:Description}
+		
+		<ul class="headerpages">
+		{block:HasPages}{block:Pages}
+        	<li><a href="{URL}" target="_self">{Label}</a></li>
+        {/block:Pages}{/block:HasPages}
+        </ul>
+        <h5>RELATED BLOGS</h5>
+        <ul class="headerpages">
+        	<li><a href="http://studio-collectingarchitectures.tumblr.com">Studio</a></li>
+        	<li><a href="http://seminar-collectingarchitectures.tumblr.com">Seminar</a></li>
+        	<li><a href="http://collectingarchitectures-sp12.tumblr.com/">Public</a></li>
+        </ul>
+        <h5>TAGS</h5>
+        <ul class="headertags">
+       		<li><a href="/tagged/Building">Building</a></li>
+        	<li><a href="/tagged/architect">Architect</a></li>
+        	<li><a href="/tagged/economy">Economy</a></li>
+        	<li><a href="/tagged/event">Event</a></li>
+        	<li><a href="/tagged/collector">Collector</a></li>
+            <li><a href="/tagged/artist">Artist</a></li>
+            <li><a href="/tagged/territory">Territory</a></li>
+            <li><a href="/tagged/preservation">Preservation</a></li>
+            <li><a href="/tagged/media">Media</a></li>
+            <li><a href="/tagged/network">Network</a></li>
+        </ul>	
+	</header>
+	<div id="wrapper">	
+		<div id="container">
+			<div id="posts">
+			
+			{block:Posts}
+				<div class="post">
+					<div class="permalinkcontainer">
+						<a class="permalinklink" href="{Permalink}"><span class="x">✖</span><span class="permalink">Permalink</span></a>
+					</div>
+				{block:Text}
+                    <div class="text">
+                        {block:Title}
+                            <h3 class="title">{Title}</h3>
+                        {/block:Title}
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+                        {Body}
+                    </div>
+                {/block:Text}
+
+				{block:Photo}
+                    <div class="photo">
+                    	{block:IfBigImages}
+  						<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+  						{/block:IfBigImages}
+  						{block:IfNotBigImages}
+  						<img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+  						{/block:IfNotBigImages}
+  						
+  						{block:IfShowAuthor}
+  						   	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        {block:Caption}
+                        	<h5>Caption</h5>
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photo}
+
+                {block:Photoset}
+                    <div class="photoset">
+                    	{block:IfBigImages}
+  						{Photoset-500}
+  						{/block:IfBigImages}
+  						{block:IfNotBigImages}
+  						{Photoset-250}
+  						{/block:IfNotBigImages}
+  						
+  						{block:IfShowAuthor}
+  	                		<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        {block:Caption}
+                        	<h5>Caption</h5>
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <div class="quote">
+                        <h3 class="title">"{Quote}"</h3>
+                        
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        {block:Source}
+                        	<h5>Source</h5>
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </div>
+                {/block:Quote}
+                
+                {block:Link}
+                    <div class="link">
+                    	<h5 class="link">Link</h5>
+                        <h3 class="title"><a href="{URL}" class="link" {Target}>{Name}</a></h5>
+                        
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        {block:Description}
+                        	<h5>Description</h5>
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </div>
+                {/block:Link}
+                
+                {block:Chat}
+                    <div class="chat">
+                        {block:Title}
+                            <h3 class="title"><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                {/block:Chat}
+                
+                {block:Video}
+                    <div class="video">
+                    	{block:IfBigImages}
+  						{Video-500}
+  						{/block:IfBigImages}
+  						{block:IfNotBigImages}
+  						{Video-250}
+  						{/block:IfNotBigImages}
+                        
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">
+                				{PostAuthorName}
+                			</div>
+                		{/block:IfShowAuthor}
+
+                        {block:Caption}
+                        	<h5>Caption</h5>
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Video}
+                
+                {block:Audio}
+                    <div class="audio">
+                        {AudioPlayerBlack}
+						
+                        {block:IfShowAuthor}
+                        	<h5>Posted by</h5>
+                			<div class="author">{PostAuthorName}</div>
+                		{/block:IfShowAuthor}
+                		
+                        {block:Caption}
+                        	<h5>Description</h5>
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Audio}
+                
+                
+                
+                {block:HasTags}
+                	<div class="tagcontainer">
+                		<h5>Tags</h5>
+                	<ul class="tags">
+                	{block:Tags}
+                		<li class="tag"><a href="{TagURLChrono}">{Tag}</a></li>              		
+                	{/block:Tags}
+                	</ul>
+                	</div>
+                {/block:HasTags}
+                
+            	</div><!-- .post -->
+                
+			{/block:Posts}
+			
+			</div><!-- #posts -->
+		</div><!-- #container -->
+	</div><!-- #wrapper -->
+	
+	<div id="pager">
+            {block:PreviousPage}
+                <a id="prev" href="{PreviousPage}">Prev</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a id="next" href="{NextPage}">Next</a>
+            {/block:NextPage}
+    </div><!-- #pager -->
+	
+	<footer id="footer">
+		<div id="GSAPP">
+			Columbia University<br>
+			Graduate School of Architecture, Planning and Preservation<br>
+			A microblog for student work and research.<br>
+			All original student work is tagged <a href="/tagged/gsappwork" target="_self">gsappwork</a>.
+		</div>
+	</footer>
+</body>
+</html>

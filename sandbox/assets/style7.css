@@ -1,0 +1,332 @@
+body {
+	color:#222;
+}
+
+body.large{
+	font: 14px/22px Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+body.small{
+	font: 11px/18px Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+div::selection, span::selection, img::selection, ul::selection, li::selection, p::selection, a::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, blockquote::selection {
+	background: #FFFFFF; /* Safari */
+	}
+div::-moz-selection, span::-moz-selection, img::-moz-selection, ul::-moz-selection, li::-moz-selection, p::-moz-selection, a::-moz-selection, h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection, blockquote::-moz-selection {
+	background: #FFFFFF; /* Firefox */
+}
+
+.gradient {
+    background: #AAAAAA; /* old browsers */
+    background: -moz-linear-gradient(top, #777777 0%, #FFFFFF 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#777777), color-stop(100%,#FFFFFF)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#FFFFFF',GradientType=0 ); /* ie */
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin:0 auto;
+	text-align:center;
+}
+
+.large h3 {
+	font-size:2.5em;
+	font-weight:bold;
+}
+
+.small h3 {
+	font-size:1.8em;
+	font-weight:bold;
+}
+
+h3.title {
+	text-align:center;
+	margin:0 auto;
+	line-height: 1em;
+	width: 80%;
+}
+
+
+h3.title a, h4.title a{
+	border:none !important;
+}
+
+.large h4 {
+	font-size:1.8em;
+	font-weight:bold;
+}
+
+.small h4 {
+	font-size:1.4em;
+	font-weight:bold;
+}
+
+h4.title {
+	text-align:center;
+	margin:0 auto;
+	line-height: 1em;
+	width: 80%;
+}
+
+h5 {
+	margin: 25px auto 0;
+	font: bold 11px/11px Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#222;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+	color:#222;
+	text-decoration:none;
+	border-bottom:1px solid #222;
+}
+
+a:hover{
+	color:#FFFFEE;
+}
+
+blockquote{
+	margin: 0;
+	padding: 0;
+}
+
+/* HEADER */
+
+#header {
+	width:320px;
+	position:fixed;
+	left:0;
+	top:0;
+	color:black;
+	text-align:center;
+}
+
+#headerlinks {
+	padding:0;
+	width:80%;
+	margin:10px 0 0 10%;
+	text-align:left;
+	list-style:none;
+}
+
+#headerlinks li{
+	display:inline;
+	margin-right:10px;
+}
+
+.headerpages, .headertags {
+	padding:0;
+	width:80%;
+	margin:10px auto 20px;
+	text-align:center;
+	list-style:none;
+}
+
+.headerpages li {
+	display:block;
+	margin-bottom:3px;
+}
+
+.headertags li {
+	display:inline;
+	margin-right:10px;
+}
+
+#logo{
+	width:64px;
+	text-align:center;
+	margin:70px auto 20px;
+	display:block;
+}
+
+#description {
+	margin:5px 0;
+	font-size:0.75em;
+	text-align:left;
+	width:80%;
+	margin-left:10%;
+}
+
+#dropdown{
+	background-color:#222222;
+	color:#FFFFEE;
+	border:1px solid #222222;
+	width:50%;
+	text-align:center;
+}
+
+/* PAGER */
+#pager {
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#prev{
+	position:fixed;
+	top:50%;
+	left:320px;
+	display:block;
+	vertical-align:middle;
+	text-align:center;
+	height:50px;
+	width:50px;
+	padding-top: 13px;
+	text-decoration: underline;
+	border:none !important;
+	color:#EEE;
+	background:transparent url("http://postfog.org/workflowtumblr/assets/circle50.png") 0 0 no-repeat;
+}
+#next{
+	position:fixed;
+	top:50%;
+	right:10px;
+	display:block;
+	vertical-align:middle;
+	text-align:center;
+	height:50px;
+	width:50px;
+	padding-top: 13px;
+	text-decoration: underline;
+	border:none !important;
+	color:#EEE;
+	background:transparent url("http://postfog.org/workflowtumblr/assets/circle50.png") 0 0 no-repeat;
+}
+
+/* FOOTER */
+#footer{
+	bottom:0;
+	display:block;
+	position:fixed;
+}
+
+#GSAPP{
+	font:9px/11px Helvetica, "Helvetica Neue", Arial, sans-serif;
+	margin-top:0;
+	width:80%;
+	margin-left:10%;
+	margin-bottom:20px;
+	text-align:left;
+}
+
+/* WRAPPER */
+
+#wrapper {
+	position:relative;
+	margin-left:320px;
+	min-height:1000px;
+}
+
+
+
+/* POST */
+.permalinkcontainer {
+	color:#222;
+	display:block;
+}
+
+.permalinklink {
+	text-align: center;
+	margin:0 auto 10px;
+	display:block;
+	border:none !important;
+}
+.permalink, .permalink:link {
+	font: bold 9px/9px Helvetica, "Helvetica Neue", Arial, sans-serif;
+	text-transform:uppercase;
+	text-decoration:none !important;
+	display:block;
+	border:none !important;
+}
+
+.x, .x:link {
+	margin: 7px 0;
+	text-decoration:none !important;
+	display:block;
+	border:none !important;
+}
+
+.large .x, .large .x:link{
+	font-size: 2.5em;
+}
+
+.small .x, .small .x:link{
+	font-size: 1.8em;
+}
+
+
+.post {
+  margin:20px 20px 50px 0;
+  float: left;
+}
+
+.large .post{
+  width: 500px;
+}
+
+.small .post{
+	width: 250px;
+}
+
+.single .post {
+	width: 750px;
+}
+	
+.post .photo {
+	text-align:center;
+	margin:0 auto;
+}
+
+.post .text p{
+	width:80%;
+	margin-left:10%;
+}
+
+.post .audio_player embed{
+	width:100%;
+}
+
+.post .photo .photoanchor a {
+	border:none !important;
+}
+
+
+.author, .caption, .source, .description{
+	text-align:center;
+	margin:7px auto 20px;
+	font:bold 12px Helvetica, "Helvetica Neue", Arial, sans-serif;
+	width:80%;
+}
+
+/* TAGS */
+
+.tagcontainer{
+	text-align:center;
+	margin:7px auto;
+}
+ul.tags {
+	margin:3px auto 20px;
+	display: inline;
+	list-style: none;
+	padding:0;
+}
+
+.tag {
+	display:inline;
+	margin-right:7px;
+	font:bold 12px Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* PERMALINK PAGE */
+.permalinkpage img {
+	max-width:750px;
+}
+
+/* COMMENTS */
+#disqus_thread {
+	margin-top:70px;
+}
