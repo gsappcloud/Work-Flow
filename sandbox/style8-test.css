@@ -1,3 +1,5 @@
+/* @override http://postfog.org/workflowtumblr/assets/style8-test.css */
+
 body {
 	color:#000;
 }
@@ -99,12 +101,14 @@ blockquote{
 /* HEADER */
 
 #header {
-	width:320px;
-	position:fixed;
+	width:100%;
+	position: fixed;
 	left:0;
 	top:0;
 	color:black;
 	text-align:center;
+	z-index:999;
+	background: #fff;
 }
 
 #headerlinks {
@@ -217,7 +221,8 @@ blockquote{
 
 #wrapper {
 	position:relative;
-	margin-left:320px;
+	margin: 250px 0 0 0 ;
+	overflow: hidden;
 	min-height:1000px;
 }
 
